@@ -65,13 +65,13 @@ const connect = (mapStateToProps = state => state, mapDispatchToProps = {}) => (
 	}
 }
 
-function bindActionCreator(creator, dispatch) {
+function bindActionCreate(creator, dispatch) {
 	return (...args) => dispatch(creator(...args))
 }
 
 export function bindActionCreator(creators, dispatch) {
 	return Object.keys(creators).reduce((res, cur) => {
-		res[cur] = bindActionCreator(creator[cur], dispatch)
+		res[cur] = bindActionCreate(creator[cur], dispatch)
 		return res
 	}, {})
 }
