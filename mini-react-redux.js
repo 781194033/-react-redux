@@ -71,7 +71,7 @@ function bindActionCreator(creator, dispatch) {
 
 export function bindActionCreators(creators, dispatch) {
 	return Object.keys(creators).reduce((res, cur) => {
-		res[cur] = bindActionCreator(creator[cur], dispatch)
+		res[cur] = bindActionCreator(creators[cur], dispatch)
 		return res
 	}, {})
 }
